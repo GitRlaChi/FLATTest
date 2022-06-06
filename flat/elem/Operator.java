@@ -10,14 +10,14 @@ public abstract class Operator {
     protected static int[] dx = { 0, 1, 0, -1 };
     protected static int[] dy = { -1, 0, 1, 0 };
     protected final int[] markers;
-    protected final FlatField.Tile parent;
+    protected final Tile parent;
 
-    public Operator(FlatField.Tile t) {
+    public Operator(Tile t) {
         parent=t;
         markers = new int[] { -1, -1 };
     }
 
-    public Operator(int m1, FlatField.Tile t) throws IllFormatException {
+    public Operator(int m1, Tile t) throws IllFormatException {
         parent=t;
         if (!(0 <= m1 && m1 <= 3)) {
             throw new IllFormatException("마커의 방향 표시자는 0~3의 값을 취해야 합니다");
@@ -25,7 +25,7 @@ public abstract class Operator {
         markers = new int[] { m1, -1 };
     }
 
-    public Operator(int m1, int m2, FlatField.Tile t) throws IllFormatException {
+    public Operator(int m1, int m2, Tile t) throws IllFormatException {
         parent=t;
         if (!(0 <= m1 && m1 <= 3) || !(0 <= m2 && m2 <= 3)) {
             throw new IllFormatException("마커의 방향 표시자는 0~3의 값을 취해야 합니다");
@@ -127,7 +127,8 @@ public abstract class Operator {
         return success;
     }
 
-    public abstract pair<Object,Integer> run(pair<Object,Integer>[] in) throws IllFormatException,OperationFailedException ; // run : execute the operation with input values
+    public abstract pair<Object,Integer> run(pair<Object,Integer>[] in) throws IllFormatException,OperationFailedException ;
+    // run : execute the operation with input values
     //input pair<Object,Integer> : first-화살표의 값, second-마커(0:없음,1:첫째,2:둘째)
     //output pair<Object,Integer> : first-출력값, second-허용 사용값
 }

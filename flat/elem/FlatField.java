@@ -13,9 +13,7 @@ public final class FlatField {
     public final int length;
     private boolean initing=true;
 
-    public class Tile {
-        private static final int IDX_AUTO=48; // 사십팔
-        private static final int IDX_OPERATOR=511;
+    private class Tile implements flat.elem.Tile {
         private Arrow[] a=new Arrow[4];
         private Operator o;
         private boolean exists; // false - 화살표/연산자 없음
@@ -147,7 +145,7 @@ public final class FlatField {
             return cord;
         }
 
-        String getType(int idx) throws OutOfRangeException {
+        public String getType(int idx) throws OutOfRangeException {
             _acheck(idx);
             if (exists&&isArrow) {
                 return type[idx];
@@ -156,7 +154,7 @@ public final class FlatField {
             }
         }
 
-        String getType() {
+        public String getType() {
             if (exists&&!isArrow) {
                 return type[0];
             } else {

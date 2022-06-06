@@ -1,14 +1,14 @@
 package flat.elem.ops;
 
 import flat.elem.Operator;
+import flat.elem.Tile;
 import flat.exep.IllFormatException;
 import flat.exep.OperationFailedException;
-import flat.elem.FlatField;
 import flat.util.TypeGetter;
 import flat.util.pair;
 
 public final class AddOperator extends Operator {
-    public AddOperator(FlatField.Tile t) {
+    public AddOperator(Tile t) {
         super(t);
     }
 

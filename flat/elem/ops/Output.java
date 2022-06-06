@@ -1,11 +1,11 @@
 package flat.elem.ops;
 
 import flat.elem.Operator;
-import flat.elem.FlatField;
+import flat.elem.Tile;
 import flat.util.pair;
 
 public final class Output extends Operator {
-    public Output(FlatField.Tile t) {
+    public Output(Tile t) {
         super(t);
     }
 

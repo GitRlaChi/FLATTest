@@ -46,9 +46,9 @@ public final class Arrow {
     public final int didx;
     public final boolean end;
     private Value v;
-    private final FlatField.Tile parent;
+    private final Tile parent;
 
-    public Arrow(String tc, int[] from, int[] dir, int didx, boolean end, FlatField.Tile t)
+    public Arrow(String tc, int[] from, int[] dir, int didx, boolean end, Tile t)
             throws IllFormatException {
         typecolor = tc;
         v = new Value(tc, null);

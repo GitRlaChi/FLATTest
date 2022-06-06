@@ -1,13 +1,13 @@
 package flat.elem.ops;
 
-import flat.elem.FlatField;
 import flat.elem.Operator;
+import flat.elem.Tile;
 import flat.exep.IllFormatException;
 import flat.exep.OperationFailedException;
 import flat.util.pair;
 
 public final class Copy extends Operator {
-    public Copy(FlatField.Tile t) {
+    public Copy(Tile t) {
         super(t);
     }
 
